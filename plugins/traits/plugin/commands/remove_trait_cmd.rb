@@ -20,6 +20,11 @@ module AresMUSH
       def required_args
         [ self.name, self.trait_name ]
       end
+
+      # Locks trait editing if approved
+      def check_chargen_locked
+        Chargen.check_chargen_locked(enactor)
+      end
       
       def handle
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|
