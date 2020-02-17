@@ -3,7 +3,7 @@ module AresMUSH
     class RemoveTraitCmd
       include CommandHandler
                 
-      attr_accessor :name, :trait_name
+      attr_accessor :name, :trait_name, :category
             
       def parse_args
         if (Chargen.can_approve?(enactor) && cmd.args =~ /.+=.+/)
