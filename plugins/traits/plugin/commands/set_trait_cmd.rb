@@ -41,7 +41,7 @@ module AresMUSH
           if (enactor.name == model.name || Chargen.can_approve?(enactor))
             traits = model.traits || {}
             # trying to add multiple values to trait, including not-yet-set order
-            traits[self.trait_name] = { self.category, self.description } 
+            traits[self.trait_name] = { :category => self.category, :description => self.description, :order => order } 
             model.update(traits: traits)
             client.emit_success t('traits.trait_set')
           else
