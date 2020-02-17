@@ -9,7 +9,8 @@ module AresMUSH
       def parse_args
        if (Chargen.can_approve?(enactor) && cmd.args =~ /\//)
           # syntax: trait/set arg1/arg2=arg3/arg4
-          args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3_slash_arg4)
+          args = cmd.parse_args(<arg1>//<arg2>=<arg3>/<arg4>)
+#         args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3_slash_arg4)
 #         args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3)
           
           self.name = titlecase_arg(args.arg1)
@@ -40,7 +41,7 @@ module AresMUSH
           if (enactor.name == model.name || Chargen.can_approve?(enactor))
             traits = model.traits || {}
             # trying to add multiple values to trait, including not-yet-set order
-            traits[self.trait_name] = { self.category, self.description, :order => order } 
+            traits[self.trait_name] = { self.category, self.description } 
             model.update(traits: traits)
             client.emit_success t('traits.trait_set')
           else
