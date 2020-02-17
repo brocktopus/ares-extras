@@ -10,7 +10,8 @@ module AresMUSH
 #        if (Chargen.can_approve?(enactor) && cmd.args =~ /\//)
         if Chargen.can_approve?(enactor)
           # syntax: trait/set arg1/arg2=arg3/arg4
-          args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3_slash_arg4)
+#          args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3_slash_arg4)
+          args = cmd.parse_args(ArgParser.flexible_args)
           
           self.name = titlecase_arg(args.arg1)
           self.trait_name = titlecase_arg(args.arg2)
