@@ -7,7 +7,7 @@ module AresMUSH
     end
  
     def self.shortcuts
-      Global.read_config("custom-traits", "shortcuts")
+      Global.read_config("customtraits", "shortcuts")
     end
     
     def self.traits_by_category(char)
