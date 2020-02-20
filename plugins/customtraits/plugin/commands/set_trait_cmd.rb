@@ -26,12 +26,16 @@ module AresMUSH
       
       def handle
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|
+
           if (enactor.name == model.name || Chargen.can_approve?(enactor))
+            SingleTrait.create(name: self.trait_name, category: self.category, description: self.description)
+=begin
             traits = model.traits || {}
             # trying to add multiple values to trait, including not-yet-set order
             traits[self.trait_name] = { :category => self.category, :description => self.description } 
             model.update(traits: traits)
             client.emit_success t('traits.trait_set')
+=end
           else
             client.emit_failure t('dispatcher.not_allowed')
           end
