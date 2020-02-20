@@ -8,12 +8,12 @@ export default Component.extend({
     },
     onUpdate: function() {
       let extras = this.get('model.app.game.extra_plugins');
-      if (!extras.any(e => e === 'traits')) {
+      if (!extras.any(e => e === 'custom-traits')) {
         return {};
       }
 
       let data = {};
-      this.get('model.char.traits').filter(t => t.name && t.name.length > 0)
+      this.get('model.char.custom-traits').filter(t => t.name && t.name.length > 0)
          .forEach(t => data[t.name] = t.desc);
       return data;
     },

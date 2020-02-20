@@ -1,5 +1,5 @@
 module AresMUSH
-  module Traits
+  module Custom-Traits
     class TraitsTemplate < ErbTemplateRenderer
       
       attr_accessor :char, :traits
@@ -11,7 +11,7 @@ module AresMUSH
       end
       
       def categories
-        Traits.traits_by_category(category)
+        Custom-Traits.traits_by_category(category)
       end
       
       def sorted_relationships(category)

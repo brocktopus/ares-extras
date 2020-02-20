@@ -1,5 +1,5 @@
 module AresMUSH
-  module Traits
+  module Custom-Traits
     class TraitsCmd
       include CommandHandler
                 
