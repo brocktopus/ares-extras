@@ -11,7 +11,7 @@ module AresMUSH
     end
     
     def self.traits_by_category(char)
-      trait_type = char.traits.group_by { |name, data| data['category'] }
+      trait_type = char.traits.group_by.map { |name, data| data['category'] }
       trait_type.sort_by { |category, trait_type| CustomTraits.category_order(char, category) }
     end
     
