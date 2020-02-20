@@ -9,6 +9,15 @@ module AresMUSH
     def self.shortcuts
       Global.read_config("traits", "shortcuts")
     end
+    
+    def self.traits_by_category(char)
+      trait_type = char.traits.group_by { |name, data| data['category'] }
+      trait_type.sort_by { |category, trait_type| Traits.category_order(char, category) }
+    end
+    
+    def self.category_order(char, category)
+      char.traits_category_order.map { |r| r.upcase }.index(category.upcase) || (category[0] || "1").ord
+    end
  
     def self.get_cmd_handler(client, cmd, enactor)
       case cmd.root

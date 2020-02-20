@@ -11,7 +11,7 @@ module AresMUSH
       end
       
       def categories
-        Traits.relationships_by_category(category)
+        Traits.traits_by_category(category)
       end
       
       def sorted_relationships(category)
