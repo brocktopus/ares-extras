@@ -1,6 +1,6 @@
 module AresMUSH
   class Character < Ohm::Model
-    collection :traits, "AresMush::SingleTrait"
+    collection :traits, "AresMUSH::SingleTrait"
 
 #    original one-line model info below
 #    attribute :traits, :type => DataType::Hash, :default => {}
