@@ -29,6 +29,7 @@ module AresMUSH
 
           if (enactor.name == model.name || Chargen.can_approve?(enactor))
             SingleTrait.create(name: self.trait_name, category: self.category, description: self.description)
+            client.emit_success t('traits.trait_set')
 =begin
             traits = model.traits || {}
             # trying to add multiple values to trait, including not-yet-set order

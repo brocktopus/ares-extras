@@ -11,11 +11,11 @@ module AresMUSH
       end
       
       def categories
-        CustomTraits.traits_by_category(category)
+        CustomTraits.traits_by_category(@char)
       end
       
       def sorted_relationships(category)
-        category.sort_by { |name, desc| [ desc['order'] || 99, name ] }
+        categories.sort_by { |name, desc| [ desc['order'] || 99, name ] }
       end
     end
   end
