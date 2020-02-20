@@ -1,5 +1,5 @@
 module AresMUSH
-  module Traits
+  module Custom-Traits
     def self.save_char(char, chargen_data)
       traits = {}
       (chargen_data[:traits] || {}).each do |name, category, desc|

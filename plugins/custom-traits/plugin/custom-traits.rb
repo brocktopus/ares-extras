@@ -1,7 +1,7 @@
 $:.unshift File.dirname(__FILE__)
 
 module AresMUSH
-  module Traits
+  module Custom-Traits
     def self.plugin_dir
       File.dirname(__FILE__)
     end
@@ -12,7 +12,7 @@ module AresMUSH
     
     def self.traits_by_category(char)
       trait_type = char.traits.group_by { |name, data| data['category'] }
-      trait_type.sort_by { |category, trait_type| Traits.category_order(char, category) }
+      trait_type.sort_by { |category, trait_type| Custom-Traits.category_order(char, category) }
     end
     
     def self.category_order(char, category)
