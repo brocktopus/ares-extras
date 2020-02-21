@@ -1,0 +1,6 @@
+<div id="systemresources" class="tab-pane fade">
+{{#each char.resources as |resource|}}
+<p><b>{{resource.name}}</b></p>
+<p>{{{ansi-format text=resource.desc}}}</p>
+{{/each}}
+</div>

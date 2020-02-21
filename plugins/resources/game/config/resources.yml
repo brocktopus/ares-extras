@@ -1,0 +1,5 @@
+resources:
+    shortcuts:
+        "resource/add": "resource/set"
+        "resource/update": "resource/set"
+        "resources": "resource"

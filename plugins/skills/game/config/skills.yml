@@ -1,0 +1,5 @@
+skills:
+    shortcuts:
+        "skill/add": "skill/set"
+        "skill/update": "skill/set"
+        "skills": "skill"

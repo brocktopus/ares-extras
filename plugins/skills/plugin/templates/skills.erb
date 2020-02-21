@@ -1,0 +1,9 @@
+%lh
+<%= t('skills.skills_title', :name => @char.name) %>
+
+<% @skills.sort.each do |name, desc| %>
+%ld
+%xh<%= name %>%xn
+<%= desc %>
+<% end %>
+%lf

@@ -1,0 +1,9 @@
+ <p class="cg-tip">Enter your character's resources.</p>
+
+     {{#each model.char.resources as |resource|}}
+     <b>{{input type="text" value=resource.name size=25}}</b> 
+     <button class="btn btn-default" {{action 'removeResource' resource.name}}><i class="fa fa-trash" aria-label="Remove Resource"></i></button>
+     {{textarea value=resource.desc cols="80" rows=5}} 
+     {{/each}}
+
+     <button class="btn btn-default" id="addresource" {{action 'addResource'}}>Add Resource</button>

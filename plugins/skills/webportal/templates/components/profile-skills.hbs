@@ -1,0 +1,6 @@
+<div id="systemskills" class="tab-pane fade">
+{{#each char.skills as |skill|}}
+<p><b>{{skill.name}}</b></p>
+<p>{{{ansi-format text=skill.desc}}}</p>
+{{/each}}
+</div>

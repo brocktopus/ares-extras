@@ -1,0 +1,9 @@
+ <p class="cg-tip">Enter your character's skills.</p>
+
+     {{#each model.char.skills as |skill|}}
+     <b>{{input type="text" value=skill.name size=25}}</b> 
+     <button class="btn btn-default" {{action 'removeSkill' skill.name}}><i class="fa fa-trash" aria-label="Remove Skill"></i></button>
+     {{textarea value=skill.desc cols="80" rows=5}} 
+     {{/each}}
+
+     <button class="btn btn-default" id="addskill" {{action 'addSkill'}}>Add Skill</button>

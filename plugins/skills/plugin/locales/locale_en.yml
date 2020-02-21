@@ -1,0 +1,6 @@
+en:
+    skills:
+        skill_set: "Skill set."
+        skills_title: "skills - %{name}"
+        skill_removed: "Skill removed."
+    

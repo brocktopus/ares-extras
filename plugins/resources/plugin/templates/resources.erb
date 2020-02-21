@@ -1,0 +1,9 @@
+%lh
+<%= t('resources.resources_title', :name => @char.name) %>
+
+<% @resources.sort.each do |name, desc| %>
+%ld
+%xh<%= name %>%xn
+<%= desc %>
+<% end %>
+%lf

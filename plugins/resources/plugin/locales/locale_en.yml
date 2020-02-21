@@ -1,0 +1,6 @@
+en:
+    resources:
+        resource_set: "Resource set."
+        resources_title: "Resources - %{name}"
+        resource_removed: "Resource removed."
+    
